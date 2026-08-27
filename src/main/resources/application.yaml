@@ -8,6 +8,8 @@ spring:
   cloud:
     config:
       server:
+        git:
+          uri: https://github.com/kalanaCwarnakulasooriya/Health-Configurations.git
         native:
           search-locations:
             - classpath:/configurations

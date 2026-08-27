@@ -1,0 +1,28 @@
+spring:
+  mvc:
+    problemdetails:
+      enabled: true
+
+  data:
+    mongodb:
+      #      uri: mongodb://root:mongodb@localhost:13500/logistic?authSource=admin
+      host: localhost
+      port: 13500
+      database: logistic
+      username: root
+      password: mongodb
+      authentication-database: admin
+
+
+server:
+  port: 8002
+
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    hostname: localhost
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka/
